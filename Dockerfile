@@ -65,11 +65,11 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/Yuriko 
-RUN git clone -b shiken https://github.com/AMANTYA1/Yuriko /root/Yuriko
+RUN git clone -b shiken https://github.com/Sumit9969/NIXA-ROBOT /root/NixaRobot
 WORKDIR /root/Yuriko
 
-#Copy config file to /root/Yuriko/Yuriko
-COPY ./Yuriko/sample_config.py ./Yuriko/config.py* /root/Yuriko/Yuriko/
+#Copy config file to /root/NixaRobot/NixaRobot
+COPY ./NixaRobot/sample_config.py ./NixaRobot/config.py* /root/NixaRobot/NixaRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","Yuriko"]
+CMD ["python3","-m","NixaRobot"]
